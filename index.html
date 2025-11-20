@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio Sangam | 104.1 FM & 104.9 HD4 - Telugu Radio Dallas</title>
+    <meta name="description" content="Listen to Telugu Sangam Radio in Dallas on 104.1 FM & 104.9 HD4. South Indian music, events, and culture.">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.png" type="image/png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZRN05RZB2N"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-ZRN05RZB2N');
+    </script>
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "RadioStation",
+      "name": "Radio Sangam",
+      "url": "https://telugusangam.net",
+      "logo": "https://telugusangam.net/img/logo.png",
+      "telephone": "+1-469-424-3188",
+      "sameAs": [
+        "https://www.facebook.com/radiosangam1049/",
+        "https://www.instagram.com/radio_sangam/"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "6850 TPC Dr STE 108",
+        "addressLocality": "McKinney",
+        "addressRegion": "TX",
+        "postalCode": "75070",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "33.1791",
+        "longitude": "-96.6655"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Dallas–Fort Worth"
+      },
+      "description": "Radio Sangam – Dallas–Fort Worth's premier 24×7 Telugu radio station (104.1 FM & 104.9 HD4). Listen live online."
+    }
+    </script>
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Radio Sangam | 104.1 FM & 104.9 HD4 | Telugu Radio in Dallas">
+    <meta property="og:description" content="Telugu Music and Indian Radio at its best. Listen on 104.1 FM and 104.9 HD4 across Dallas.">
+    <meta property="og:image" content="https://telugusangam.net/img/logo.png">
+    <meta property="og:url" content="https://telugusangam.net">
+    <meta property="og:type" content="website">
+</head>
+<body>
+    <!-- Three.js Canvas Background -->
+    <canvas id="threejs-canvas"></canvas>
+    
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <img src="img/logo.png" alt="Radio Sangam Logo">
+            </div>
+            <div class="loading-text">Radio Sangam</div>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <img src="img/logo.png" alt="Radio Sangam Logo" class="logo-img">
+                </a>
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
+                    <li class="nav-item"><a href="#featured" class="nav-link">Featured Shows</a></li>
+                    <li class="nav-item"><a href="schedule.html" class="nav-link">Schedule</a></li>
+                    <li class="nav-item"><a href="interviews.html" class="nav-link">Interviews</a></li>
+                    <li class="nav-item"><a href="media-kit.html" class="nav-link">Media Kit</a></li>
+                    <li class="nav-item"><a href="advertise.html" class="nav-link">Advertise with Us</a></li>
+                </ul>
+                
+                <div class="nav-actions">
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/radiosangam1049/" target="_blank" class="social-link" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/radio_sangam/" target="_blank" class="social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                    <button class="login-btn" id="login-btn">
+                        <i class="fas fa-user"></i>
+                        <span>Login</span>
+                    </button>
+                </div>
+            </div>
+            
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-radio"></i>
+                <span>Live Broadcasting 24/7</span>
+            </div>
+            <h1 class="hero-title">
+                <span class="title-line">Experience</span>
+                <span class="title-line gradient-text">Radio Sangam</span>
+            </h1>
+            <p class="hero-subtitle">
+                Dallas–Fort Worth's Premier Telugu Radio Station
+            </p>
+            <div class="hero-frequencies">
+                <div class="frequency-badge">104.1 FM</div>
+                <div class="frequency-divider"></div>
+                <div class="frequency-badge">104.9 HD4</div>
+            </div>
+            <div class="hero-cta">
+                <button class="cta-btn primary" id="hero-listen-btn">
+                    <i class="fas fa-play"></i>
+                    <span>Listen Live</span>
+                </button>
+                <a href="#featured" class="cta-btn secondary">
+                    <span>Explore Shows</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Broadcasting</div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <div class="stat-number">100K+</div>
+                    <div class="stat-label">Listeners</div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Years</div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+            <span>Scroll to explore</span>
+        </div>
+    </section>
+    
+    <!-- Featured Shows Section -->
+    <section class="featured-shows" id="featured">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-star"></i>
+                    <span>Featured Shows</span>
+                </div>
+                <h2 class="section-title">Meet Our Radio Jockeys</h2>
+                <p class="section-subtitle">Bringing you the best Telugu entertainment and music</p>
+            </div>
+            
+            <div class="carousel-container">
+                <button class="carousel-btn prev" id="carousel-prev">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                
+                <div class="carousel-wrapper">
+                    <div class="carousel-track" id="carousel-track">
+                        <!-- RJ Card 1 -->
+                        <div class="rj-card">
+                            <div class="rj-image">
+                                <img src="img/DNR.png" alt="Weekend Show">
+                                <div class="rj-overlay">
+                                    <div class="rj-badge">RJ DNR</div>
+                                </div>
+                            </div>
+                            <div class="rj-content">
+                                <h3 class="rj-name">D talks with DNR</h3>
+                                <p class="rj-time"><i class="far fa-clock"></i> 6:00 PM - 8:00 PM</p>
+                                
+                            </div>
+                        </div>
+                        
+                        <!-- RJ Card 2 -->
+                        <div class="rj-card">
+                            <div class="rj-image">
+                                <img src="img/naveenCover.png" alt="Midday Show">
+                                <div class="rj-overlay">
+                                    <div class="rj-badge">RJ Naveen</div>
+                                </div>
+                            </div>
+                            <div class="rj-content">
+                                <h3 class="rj-name">Saturday</h3>
+                                <p class="rj-time"><i class="far fa-clock"></i> 2:00 PM - 4:00 PM</p>
+                                <p class="rj-description"></p>
+                            </div>
+                        </div>
+                        
+                        <!-- RJ Card 3 -->
+                        <div class="rj-card">
+                            <div class="rj-image">
+                                <img src="img/Maithreyi_Cover.png" alt="Evening Show">
+                                <div class="rj-overlay">
+                                    <div class="rj-badge">RJ Maithreyi</div>
+                                </div>
+                            </div>
+                            <div class="rj-content">
+                                <h3 class="rj-name">Weekend Show</h3>
+                                <p class="rj-time"><i class="far fa-clock"></i> 8:00 AM - 11:00 AM</p>
+                                <p class="rj-description"></p>
+                            </div>
+                        </div>
+                        
+                        <!-- RJ Card 4 -->
+                        <div class="rj-card">
+                            <div class="rj-image">
+                                <img src="img/shravCover.png" alt="Night Show">
+                                <div class="rj-overlay">
+                                    <div class="rj-badge">RJ Shravanthi</div>
+                                </div>
+                            </div>
+                            <div class="rj-content">
+                                <h3 class="rj-name">Friday</h3>
+                                <p class="rj-time"><i class="far fa-clock"></i> 5:00 PM - 8:00 PM</p>
+                                <p class="rj-description"></p>
+                            </div>
+                        </div>
+                        
+                        <!-- RJ Card 5 -->
+                        <div class="rj-card">
+                            <div class="rj-image">
+                                <img src="img/hymaCover.png" alt="Late Night">
+                                <div class="rj-overlay">
+                                    <div class="rj-badge">RJ Hyma</div>
+                                </div>
+                            </div>
+                            <div class="rj-content">
+                                <h3 class="rj-name">Weekday Show</h3>
+                                <p class="rj-time"><i class="far fa-clock"></i> 11:00 AM - 2:00 PM</p>
+                                <p class="rj-description"></p>
+                            </div>
+                        </div>
+                        
+                        <!-- RJ Card 6 -->
+                        <div class="rj-card">
+                            <div class="rj-image">
+                                <img src="img/yashiniCover.png" alt="Weekend Show">
+                                <div class="rj-overlay">
+                                    <div class="rj-badge">RJ Yashini</div>
+                                </div>
+                            </div>
+                            <div class="rj-content">
+                                <h3 class="rj-name">Weekday Shows</h3>
+                                <p class="rj-time"><i class="far fa-clock"></i> 2:00 PM - 5:00 PM (M-F)</p>
+                                <p class="rj-description">Non-stop entertainment for your weekends</p>
+                            </div>
+                        </div>
+                        <div class="rj-card">
+                            <div class="rj-image">
+                                <img src="img/MadhuCover.png" alt="Night Show">
+                                <div class="rj-overlay">
+                                    <div class="rj-badge">RJ Madhurima</div>
+                                </div>
+                            </div>
+                            <div class="rj-content">
+                                <h3 class="rj-name">Weekday Shows</h3>
+                                <p class="rj-time"><i class="far fa-clock"></i> 7:00 AM - 11:00 AM (M-F)</p>
+                                <p class="rj-description"></p>
+                            </div>
+                        </div>
+                         <div class="rj-card">
+                            <div class="rj-image">
+                                <img src="img/manisha.png" alt="Night Show">
+                                <div class="rj-overlay">
+                                    <div class="rj-badge">RJ Manisha</div>
+                                </div>
+                            </div>
+                            <div class="rj-content">
+                                <h3 class="rj-name">Weekday Shows</h3>
+                                <p class="rj-time"><i class="far fa-clock"></i>8:00 PM - 10:00 PM (M-F)</p>
+                                <p class="rj-description"></p>
+                            </div>
+                        </div>
+                        <div class="rj-card">
+                            <div class="rj-image">
+                                <img src="img/Madhu_T_Cover.png" alt="Night Show">
+                                <div class="rj-overlay">
+                                    <div class="rj-badge">RJ Madhurya</div>
+                                </div>
+                            </div>
+                            <div class="rj-content">
+                                <h3 class="rj-name">Saturday</h3>
+                                <p class="rj-time"><i class="far fa-clock"></i> 8:00 PM - 10:00 PM</p>
+                                <p class="rj-description"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="carousel-btn next" id="carousel-next">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            
+            <div class="carousel-dots" id="carousel-dots"></div>
+        </div>
+    </section>
+    
+    <!-- Advertising Carousel Section -->
+    <section class="advertising-section" id="advertising">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-bullhorn"></i>
+                    <span>Our Partners</span>
+                </div>
+                <h2 class="section-title">Featured Sponsors</h2>
+            </div>
+            
+            <div class="advertising-carousel">
+                <div class="advertising-track" id="advertising-track">
+                    <!-- Ads will be loaded dynamically from API -->
+                </div>
+            </div>
+            
+            <div class="advertising-indicators" id="advertising-indicators"></div>
+        </div>
+    </section>
+    
+    <!-- App Download Section -->
+    <section class="app-download-section" id="app-download">
+        <div class="app-download-container">
+            <div class="app-download-grid">
+                <div class="app-download-content">
+                    <h2>
+                        Download <span class="highlight">Radio Sangam</span> App
+                    </h2>
+                    <p>Take Radio Sangam with you wherever you go. Stream live, catch up on missed shows, and stay connected with your favorite Telugu radio station.</p>
+                    
+                    <div class="app-features">
+                        <div class="app-feature">
+                            <i class="fas fa-headphones"></i>
+                            <div class="app-feature-text">
+                                <h4>Live Streaming</h4>
+                                <p>Listen 24/7 anywhere</p>
+                            </div>
+                        </div>
+                        
+                        <div class="app-feature">
+                            <i class="fas fa-podcast"></i>
+                            <div class="app-feature-text">
+                                <h4>Show Library</h4>
+                                <p>Access past episodes</p>
+                            </div>
+                        </div>
+                        
+                        <div class="app-feature">
+                            <i class="fas fa-star"></i>
+                            <div class="app-feature-text">
+                                <h4>Rewards Points</h4>
+                                <p>Earn & redeem rewards</p>
+                            </div>
+                        </div>
+                        
+                        <div class="app-feature">
+                            <i class="fas fa-bell"></i>
+                            <div class="app-feature-text">
+                                <h4>Notifications</h4>
+                                <p>Never miss a show</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="app-store-buttons">
+                        <a href="#" class="store-btn">
+                            <i class="fab fa-apple"></i>
+                            <div class="store-btn-text">
+                                <small>Download on the</small>
+                                <span>App Store</span>
+                            </div>
+                        </a>
+                        
+                        <a href="#" class="store-btn">
+                            <i class="fab fa-google-play"></i>
+                            <div class="store-btn-text">
+                                <small>Get it on</small>
+                                <span>Google Play</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="app-phone-mockup">
+                    <div class="phone-container">
+                        <div class="phone-3d" id="phone-3d">
+                            <img src="img/app-mockup.png" alt="Radio Sangam App">
+                        </div>
+                        <div class="phone-glow"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Why Choose Us Section -->
+    <section class="why-choose">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-heart"></i>
+                    <span>Why Choose Us</span>
+                </div>
+                <h2 class="section-title">The Best Telugu Radio Experience</h2>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <h3>Premium Content</h3>
+                    <p>Curated Telugu music and entertainment tailored for the DFW community</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-broadcast-tower"></i>
+                    </div>
+                    <h3>24/7 Live</h3>
+                    <p>Round-the-clock broadcasting with crystal clear quality</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Community First</h3>
+                    <p>Connecting and celebrating the Telugu community in Dallas</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Multi-Platform</h3>
+                    <p>Listen on FM, online, or through our mobile app</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>Get in Touch</h2>
+                    <p>Connect with Radio Sangam for advertising, events, or any inquiries</p>
+                    
+                    <div class="contact-items">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Sales Inquiries</h4>
+                                <a href="tel:+14694243188">+1 469-424-3188</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Events & Sponsorships</h4>
+                                <a href="tel:+19728466666">+1 972-846-6666</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Email</h4>
+                                <a href="mailto:sales@telugusangam.net">sales@telugusangam.net</a>
+                                <a href="mailto:events@funasia.net">events@funasia.net</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Location</h4>
+                                <p>6850 TPC Dr STE 108<br>McKinney, TX 75070</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-visual">
+                    <div class="contact-card">
+                        <div class="card-glow"></div>
+                        <i class="fas fa-broadcast-tower"></i>
+                        <h3>Broadcasting Excellence</h3>
+                        <p>Serving the DFW Telugu community since 2010</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <img src="img/logo.png" alt="Radio Sangam">
+                    </div>
+                    <p class="footer-description">
+                        Dallas–Fort Worth's premier 24×7 Telugu radio station bringing you the best in music and entertainment.
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/radiosangam1049/" target="_blank" class="footer-social-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/radio_sangam/" target="_blank" class="footer-social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@RadioSangam1041FM" target="_blank" class="footer-social-link">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="schedule.html">Schedule</a></li>
+                        <li><a href="interviews.html">Interviews</a></li>
+                        <li><a href="media-kit.html">Media Kit</a></li>
+                        <li><a href="advertise.html">Advertise with Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Other Radio Stations</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://funasia.net/" target="_blank">FunAsia</a></li>
+                        <li><a href="https://big1062.com/" target="_blank">Big 106.2</a></li>
+                        <li><a href="https://beat978.com/" target="_blank">Beat 97.8</a></li>
+                        <li><a href="https://luv1071.com/" target="_blank">Luv 107.1</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Our Business</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://www.funpizzakitchen.com/" target="_blank">Fun Pizza Kitchen</a></li>
+                        <li><a href="https://www.thakkardevelopers.com/" target="_blank">Thakkar Developers</a></li>
+                        <li><a href="privacy_policy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 FunAsia - Radio Sangam. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Floating Audio Player -->
+    <div class="audio-player" id="audio-player">
+        <div class="player-content">
+            <div class="player-info">
+                <div class="player-icon">
+                    <i class="fas fa-broadcast-tower"></i>
+                </div>
+                <div class="player-text">
+                    <div class="player-title">Radio Sangam</div>
+                    <div class="player-subtitle" id="player-status">Ready to play</div>
+                </div>
+            </div>
+            
+            <div class="player-controls">
+                <button class="player-btn" id="play-pause-btn">
+                    <i class="fas fa-play" id="play-icon"></i>
+                </button>
+                <div class="volume-control">
+                    <button class="volume-btn" id="volume-btn">
+                        <i class="fas fa-volume-up" id="volume-icon"></i>
+                    </button>
+                    <input type="range" class="volume-slider" id="volume-slider" min="0" max="100" value="70">
+                </div>
+                <a href="tel:+12148173333" class="player-phone">
+                    <i class="fas fa-phone"></i>
+                </a>
+            </div>
+        </div>
+        <audio id="radio-stream" preload="none">
+            <source src="https://stream.voxx.pro/listen/radio_sangam/radio.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+    
+    <!-- Login Modal -->
+    <div class="modal" id="login-modal">
+        <div class="modal-overlay" id="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-header">
+                <i class="fas fa-user-circle"></i>
+                <h2>Welcome Back</h2>
+                <p>Sign in to access exclusive features and your personalized dashboard</p>
+            </div>
+            <div class="modal-body">
+                <button class="google-login-btn" id="google-login-btn">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                        <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                        <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                        <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                        <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                    </svg>
+                    <span>Continue with Google</span>
+                </button>
+                
+                <div class="login-divider">
+                    <span>or</span>
+                </div>
+                
+                <div class="login-info">
+                    <i class="fas fa-info-circle"></i>
+                    <p>Sign in to access your rewards points, favorite shows, and exclusive content</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- User Profile Dropdown (Hidden by default) -->
+    <div class="user-profile" id="user-profile" style="display: none;">
+        <div class="profile-header">
+            <img src="" alt="Profile" id="profile-image" class="profile-image">
+            <div class="profile-info">
+                <h4 id="profile-name">User Name</h4>
+                <p id="profile-email">email@example.com</p>
+            </div>
+        </div>
+        <div class="profile-points">
+            <div class="points-badge">
+                <i class="fas fa-star"></i>
+                <span id="user-points">0</span>
+            </div>
+            <p>Reward Points</p>
+        </div>
+        <button class="logout-btn" id="logout-btn">
+            <i class="fas fa-sign-out-alt"></i>
+            <span>Logout</span>
+        </button>
+    </div>
+    
+    <!-- Firebase SDK -->
+    <script type="module" src="js/firebase-config.js"></script>
+    <script type="module" src="js/auth.js"></script>
+    
+    <!-- Main JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
